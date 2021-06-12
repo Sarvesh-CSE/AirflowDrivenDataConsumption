@@ -1,0 +1,182 @@
+.banner-area{
+    height: 100vh;
+    background-image: url(istockphoto-883265372-640x640.jpg);
+    background-position: center;
+  -webkit-background-size: cover;
+    background-size: cover;
+    
+    
+}
+body{
+    
+        margin: 0;
+        padding: 0;   
+}
+header{
+    padding: 15px 60px;
+}
+.menu {
+    width: 50%;
+    float: right;
+    list-style: none;
+    position: relative;
+    top: 10%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+.menu li{
+    width: 40px;
+    height: 20px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 13px;
+    float: left;
+    padding: 25px;
+    color: #15f4ee;
+  border-radius: 5px solid #15f4ee;   
+}
+.menu li:hover{
+}.menu li a{
+    text-decoration: none;
+    font-family: poppins;
+    color: #15f4ee;
+    text-transform: uppercase; 
+    position: relative;
+    width: 80px;
+    padding: 10px;
+    font-size: 12px;
+    font-family: poppins;
+    font-weight: 200;
+    border: 3px solid #15f4ee;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 200px;
+    transition: 1.5s;
+    
+     
+     
+    
+}
+.menu li:hover a{
+   box-shadow: 0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+}.banner-text{
+    position: absolute;
+    color: #fff;
+    top: 30%;
+    left: 10%;
+    transform: translate(50%,50%);
+    text-align: center;
+}
+
+     .row{
+        display: flex;
+        height: 20%;
+        align-items: center;
+         float: left;
+  width: 25%;
+  padding: 5px;
+         
+        
+}
+.col::after{
+     
+
+        flex-basis: 20%;
+    
+  content: "";
+  clear: both;
+  display: table;
+
+    
+
+}
+.banner-text h2{
+    font-family: baloo;
+    margin: 0;
+    font-size: 55px;
+    color: #fff;
+    text-align:center;
+}
+.banner-text p{
+    font-size: 20px;
+    margin: 0;
+    font-family: poppins;
+    color:aqua;
+    
+    
+}
+.banner-text a{
+    text-decoration: none;
+    border: 1px solid #fff;
+    font-size: 15px;
+    padding: 10px 35px;
+    color: aqua;
+    display: inline-block;
+    margin-top: 5%;
+    font-family: poppins;
+    text-decoration: uppercase;
+}
+.banner-text a:hover{
+    border-color:azure;
+    background: azure;
+    transition: .9s;
+    color: #262626;
+    
+}
+    
+  .card{
+       width:400px; 
+      float: left;
+  width: 25%;
+  padding: 5px;
+        height: 180px;
+        display: inline-block;
+        border-radius: 10px;
+    
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 10px;
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.5s;
+    }.card p{ font-size: 20px;
+        margin: 0;
+        font-family: poppins;
+        color:aqua;
+
+    }.card h3{
+        font-family: baloo;
+        margin: 0;
+        font-size: 20px;
+        color: #fff;
+        
+    }
+    .card1{width:350px;
+        height: 200px;
+          background-image: url(sunshine.jpg);
+    }
+    .card2{width:350px;
+        height: 200px;
+        background-image:url(snow.jpg);
+    }
+    .card3{width:350px;
+        height: 200px;
+        background-image: url(rainy.jpg);
+    }
+    .card4{width:350px;
+        height: 200px;
+         background-image: url(storm.jpg);
+    }
+    .card:hover{
+        transform: translateY(-10px);     
+    }
+   
+    h5{
+     color: azure;
+        text-shadow: 5 5 5px #999;
+    }
+    .card p{
+        text-shadow: 5 5 15px #000;
+        font-size: 15px;
+    }

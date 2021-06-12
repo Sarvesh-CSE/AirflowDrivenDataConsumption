@@ -1,0 +1,163 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: darkblue;
+    color:#fff;
+    position: relative;
+}.navbar{
+    width: 90%;
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+}.logo{
+    width: 120px;
+    cursor: pointer;
+    
+}header{
+    padding: 15px 60px;
+}
+.menu {
+    width: 50%;
+    float: right;
+    list-style: none;
+    position: relative;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+}
+.menu li{
+    width: 50px;
+    height: 10px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 13px;
+    float: left;
+    padding: 40px;
+    color: #15f4ee;
+   border-radius: 5px solid #15f4ee;
+     
+}
+.menu li:hover{
+}.menu li a{
+    text-decoration: none;
+    font-family: poppins;
+    color: #15f4ee;
+    text-transform: uppercase; 
+    position: relative;
+    width: 100px;
+    padding: 20px;
+    font-size: 17px;
+    font-family: poppins;
+    font-weight: 200;
+    border: 3px solid #15f4ee;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 200px;
+    transition: 1.5s;
+    
+     
+     
+    
+}
+.menu li:hover a{
+   box-shadow: 0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+}.row{
+    width: 80%;
+    min-height: 85vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}.col{
+    margin: 20px 0;
+    flex-basis: 50%;
+    min-width: 300px;
+    height: 100%;
+    position: relative;
+}.text-box{
+    max-width: 400px;
+    margin-top: 100px;
+
+
+}.text-box h1{
+    font-size: 50px;
+    font-weight: 150;
+    letter-spacing: 3px;
+    line-height: 70px;
+    color: yellow;
+
+}.text-box h5{
+    color:brown
+}.gallery-box{
+    max-width: 400px;
+    position: relative;
+    margin: auto;
+}.gallery-box img{
+    width: 100%;
+    border: 10px solid rgba(255,255,255,0.2);
+    box-sizing:border-box;
+}.gallery-box ul{
+    position: absolute;
+    right: -100px;
+    top:50%;
+    transform: translateY(-50%);
+}.gallery-box ul li{
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}.gallery-box .active{
+    color: #e7c82f;
+}.gallery-box ul li::after{
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: transparent;
+    position: absolute;
+    top: 8px;
+    left: -5px;
+
+}.gallery-box ul li::after{
+    background: #22846b;
+}.small-icons1{
+    width: 15%;
+    position: absolute;
+    right: 200px;
+    top: -10px;
+    opacity: 0.3;
+}.small-icons2{
+    width: 15%;
+    position: absolute;
+    right: 200px;
+    top: -10px;
+    opacity: 0.3;
+}.small-icons3{
+    width: 15%;
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    opacity: 0.5;
+    transform: rotate(45deg);
+}.small-icons4{
+    width: 250px;
+    position: absolute;
+    left: -150px;
+    top: 120px;
+    opacity: 0.3;
+}.small-icons5{
+    width: 25px;
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+    opacity: 0.3;
+}

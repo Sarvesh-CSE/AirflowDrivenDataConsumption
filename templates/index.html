@@ -7,10 +7,12 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
 </head>
 <body>
+<centre>   
 <h2>Weather Dashboard</h2>
-<form id="weatherForm" method="POST" action="/">
+<form id="weatherForm" method="POST" action="{{ url_for('render_results') }}" >
     Location: <input id="weatherInput" type="text" name="location" /><br />
-    <input id="weatherSubmit" type="submit" value="Submit" onsubmit="{{ url_for('results') }}" />
+    <input id="weatherSubmit" type="submit" value="Submit" />
 </form>
+</centre>
 </body>
 </html>

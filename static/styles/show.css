@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,100&display=swap');
+body,html{
+    height: 100%;
+    margin: 0;
+    font-size: 'poppins',sans-seriff;
+}
+.bg{
+     background-image: url(contact.jpg);
+     height: 100%;
+     background-position: center;
+     background-repeat:no-repeat;
+     background-size: cover;
+     
+}.container{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}.menu {
+    width: 50%;
+    float: right;
+    list-style: none;
+    position: relative;
+    top: 1%;
+    left: -25%;
+    transform: translate(-50%,-50%);
+}
+.menu li{
+    width: 40px;
+    height: 20px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 13px;
+    float: left;
+    padding: 25px;
+    color: #15f4ee;
+  border-radius: 5px solid #15f4ee;   
+}
+.menu li:hover{
+}.menu li a{
+    text-decoration: none;
+    font-family: poppins;
+    color: #15f4ee;
+    text-transform: uppercase; 
+    position: relative;
+    width: 80px;
+    padding: 10px;
+    font-size: 12px;
+    font-family: poppins;
+    font-weight: 200;
+    border: 3px solid #15f4ee;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 200px;
+    transition: 1.5s;
+    
+     
+     
+    
+}
+.menu li:hover a{
+   box-shadow: 0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+}
+.widget{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    background: rgba(299,299,299,0.4);
+}.widget.left{
+    position: absolute;
+    left: 0;
+    width: 100%;
+}.widget .right{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    color: #fff;
+    margin: 50px 0;
+}.icons{
+    width: 40%;
+    margin-bottom: -30px;
+    margin-left: auto;
+    margin-right: auto;
+}.weather-status{
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+}.widget .right .h2{
+    font-size: 15px;
+    font-weight: 100;
+}
+.widget .right .City{
+    font-size: 1em;
+    text-align: center;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px #707070;
+    margin-top: -150px;
+}.widget .right .degree{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    text-shadow: 1px 1px 5px #707070;
+}.widget .bottom{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-self: center;
+    color: navy ;
+}.widget .bottom div{
+    margin: 5px 10px 5px 10px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 1.25em;
+    text-shadow: 1px 1px 5px #707070;
+    margin-bottom: 40px;
+}

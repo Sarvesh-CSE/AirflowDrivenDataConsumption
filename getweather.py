@@ -2,7 +2,6 @@ import requests
 import json
 from datetime import datetime, timedelta
 import os
-import cgi
 
 def get_weather():
     """
@@ -10,13 +9,17 @@ def get_weather():
 	Varanasi and then dump the json to the /src/data/ directory 
 	with the file name "<today's date>.json"
 	""" 
+    with open('/c/Users/Admin/airflow/DAGS/src/get_city.json') as JsonFile:
+        data = json.load(JsonFile)
+        JsonData = data["weather_input"]
+        count = len(JsonData)
+        loc = (JsonData[count-1].get("city"))
+        print(loc)
 
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=a728a370130711e2e8192f0aaa7ecb4b'
     
-    #frm = cgi.FieldStorage()
-    #city = frm.getvalue('location')
-    city = 'Varanasi, IN'
-    result = requests.get(url.format(city))
+   
+    result = requests.get(url.format(loc))
    
     if result.status_code == 200 :
 

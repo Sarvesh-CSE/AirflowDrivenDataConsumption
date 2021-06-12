@@ -8,20 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-     
-<div id="weatherResults">
-  {% for row in result %}    
-
-    <h2>Weather in {{row.latitude}}</h2><br>
-    <h3>{{row.longitude}}</h3><br>
-    <h4>{{row.humidity}}</h4><br>
-    <h5>{{row.pressure}}</h5><br>
-    <h6>{{row.min_temp}}</h6><br>
-    <h7>{{row.max_temp}}</h7><br>
-    <h8>Feels like {{row.weather}}</h8><br>
-        
-  {% endfor %}
-
-</div>
+  <div id="weatherResults">
+    <h2><p>Weather in  25.33 LATITUDE</p></h2><br>
+    <h3>83 LONGITUDE</h3><br>
+    <h4>81% HUMIDITY</h4><br>
+    <h5>997 mBar PRESSURE</h5><br>
+    <h6>27deg MIN_TEMP</h6><br>
+    <h7>33deg MAX TEMP</h7><br>
+    <h8>Feels like FOGGY {{result.weather}}</h8><br>
+  </div>
 </body>
 </html>

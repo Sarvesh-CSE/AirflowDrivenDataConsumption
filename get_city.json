@@ -1,0 +1,217 @@
+{
+    "weather_input": [
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "lucknow"
+        },
+        {
+            "city": "chennai"
+        },
+        {
+            "city": "{place}"
+        },
+        {
+            "city": "{place}"
+        },
+        {
+            "city": "{{ place }}"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "delhi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Chennai"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Bangalore"
+        },
+        {
+            "city": "Meerut"
+        },
+        {
+            "city": "Agra"
+        },
+        {
+            "city": "Ajmer"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "chicago"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "varanasi"
+        },
+        {
+            "city": "Varanasi"
+        },
+        {
+            "city": "Lucknow"
+        },
+        {
+            "city": "Varanasi"
+        }
+    ]
+}
