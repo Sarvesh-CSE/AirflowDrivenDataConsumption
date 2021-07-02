@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hourly weather</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/hourly.css') }}">
+
+    
+    </head>
+    <body>
+        <div class="banner-area">
+          <div class="area">
+            <img src="{{ url_for('static',filename='weather.svg') }}" class="icons">
+            <h4>Weathru</h4>
+                     <div class="area2">
+                            <li><a href="/about">About</a></li>
+                             <li><a href="/news">News</a></li>
+                             <li><a href="/contact">Contacts</a></li>
+                             <li><a href="/signup">Sign up</a></li>
+                     </div>
+          </div>
+            <header>
+              
+                <ul class="menu">
+
+                <li><a href="/results">Today</a></li>   
+                    <li><a href="/hourly">Hourly</a></li> 
+                      <li><a href="/daily">Daily</a></li>
+                        <li><a href="/air_quality">Air Quality</a></li>
+                        
+                </ul>
+                     
+                </header>  
+                <div class="form-box">
+                  <form id="weatherForm" method="POST" action="{{ url_for('render_results') }}">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                    <select required id="country" name="country" placeholder="select country" class="search-field location1">
+                      <option select disabled value="">Country</option>
+                      <option value="Australia">Australia</option>
+                      <option value="India">India</option>
+                      <option value="USA">USA</option>
+                    </select>
+                     
+                    <select required id="location" name="location" placeholder="select city"  class="search-field location2">
+                      <option select disabled value="">Location</option>
+                    </select>
+                    <input id="weatherSubmit" type="submit" value="Search" class="search-btn"/>
+                  </form>
+                 </div>
+            
+            
+                    <div class="container">
+                      <div class="glassmorphism">
+                          <div class="weather-box">
+                              <h1>{{ day_1_temp }}<sup>o</sup>C</h1>
+                              <h2>{{ time1 }}</h2>
+                              <h4><img src="{{ url_for('static', filename = day_1_icon+'.png') }}" /> {{ day_1_con }}</h4>
+                              
+
+                              <div class="weather-box1">
+                                <h1>{{ day_2_temp }}<sup>o</sup>C</h1>
+                                <h2>{{ time2 }}</h2>
+                                <h4><img src="{{ url_for('static', filename = day_2_icon+'.png') }}" /> {{ day_2_con }}</h4>
+                                
+
+
+
+                                <div class="weather-box2">
+                                  <h1>{{ day_3_temp }}<sup>o</sup>C</h1>
+                                  <h2>{{ time3 }}</h2>
+                                  <h4><img src="{{ url_for('static', filename = day_3_icon+'.png') }}" /> {{ day_3_con }}</h4>
+                                  
+
+                                  <div class="weather-box3">
+                                    <h1>{{ day_4_temp }}<sup>o</sup>C</h1>
+                                    <h2>{{ time4 }}</h2>
+                                    <h4><img src="{{ url_for('static', filename = day_4_icon+'.png') }}" /> {{ day_4_con }}</h4>
+                                    
+                              <div class="bottom">
+                          <div>
+                            <span>  </span>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="bottom1">
+                           <div>   <span>  </span></div>
+                        </div>
+                       
+                        <div class="bottom2">
+                          <div>   <span>  </span></div>
+                     </div> 
+                     <div class="bottom3">
+                      <div>   <span>    </span></div>
+                 </div> 
+                        <div class="location">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                                <span>{{ place }}</span>
+                              </div>
+                          </div>
+                          
+                      </div>
+                    <div class="gallery">
+                      <div class="row">
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='Thunderincity.jpg') }}" alt="Lights" style="width:100%">
+                            <h3>Maharastra to face thunderelectricity</h3>
+                           <p> The atmospheric conditions are quite conducive for formation of severe thunderstorms in the pre - monsoon season. There are sensitive weather pockets which enhance the ferocity of these storm.
+
+                        </p>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='second.jpg') }}" alt="Nature" style="width:100%">
+                            <h3>Srinagar updates</h3>
+                            <p>Providing a local hourly Srinagar weather forecast of rain, sun, wind, humidity and temperature.The Long-range 12 day forecast also includes detail for Srinagar weather today.Srinagar is 1561 m above sea level and located at 34.08° N 74.78° E. 
+                                
+                                </p> </div>
+                        </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='hima.jpg') }}" alt="Mountains" style="width:100%">
+                            <h3>Meanwhile himalayan regions are stunning now</h3>
+                       <p>The Northern states like Himachal Pradesh experience a great weather in June and have the most stunning landscapes.One can visit to enjoy the mesmerizing beauty.
+                      </p>
+                       </div>
+                      </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='muss.jpg') }}" alt="Mountains" style="width:100%">
+                            <h3>Best time to visit  Mussorie</br></h3>
+                            <p>Apart from the other-worldly beauty of a snow-clad Mussoorie, winter is a time of quiet contemplation and long brisk walks. People who visit Mussoorie</p>
+                          </div>
+                        </div>
+                        <footer class="footer">
+                          <div class="footer-left">
+                            <img src="{{ url_for('static',filename='weather.svg') }}">
+                            <p></p>
+                            <div class="socials">
+                              <a href="#"><i class="fa fa-facebook"></i></a>
+                              <a href="#"><i class="fa fa-twitter"></i></a>
+                              
+                              <a href="#"><i class="fa fa-youtube"></i></a>
+                              
+                            </div>
+                          </div>
+                          <ul class="footer-right">
+                            <li>
+                               <div class="product">
+                              <h2>Product</h2>
+                                
+                              <ul class="box">
+                                <li><a href="#">for business</a></li>
+                                <li><a href="#">for partners</a></li>
+                                <li><a href="#">for advertising</a></li>
+                                <li><a href="#">podcast</a></li>
+                              </ul>
+                              </div>
+                            </li>
+                          <li class="features">
+                            <div class="links">
+                            <h2>Useful links</h2>
+                            <ul class="box">
+                              <li><a href="#">Openweathermap api</a></li>
+                              <li><a href="#">contact: riyanshasingh074@gmail.com</a></li>
+                              <li><a href="#"><br>singhruby@gmail.com</a></li>
+                              <li><a href="#"></a></li>
+                            </ul>
+                            </div>
+                          </li>
+                         <li> 
+                           <div class="address">
+                          <h2>Address</h2>
+                          <ul class="box">
+                            <li><a href="#">MMV, bhu Lanka, Varanasi</a></li>
+                            <li><a href="#">CS department, MMV</a></li>
+                            <li><a href="#">229402</a></li>
+                            <li><a href="#">Varanasi</a></li>
+                          </ul>
+                          </div>
+                            </li>
+        
+                          </ul>
+        
+        
+                           <div class="footer-bottom">
+        
+                            <p>All Right reserved by &copy;conceptial2021</p>
+                           </div>
+                        </footer>
+                        <script>
+                          $(document).ready(function () {
+                            $("#country").change(function () {
+                              var val = $(this).val();
+                                if (val == "Australia") 
+                                {
+                                  $("#location").html("<option selected disabled value=''>Location</option><option value='Sydney'>Sydney</option><option value='Brisbane'>Brisbane</option><option value='Perth'>Perth</option>");
+                                }
+                                else if (val == "India") 
+                                {
+                                  $("#location").html("<option selected disabled value=''>Location</option><option value='Ahmedabad'>Ahmedabad</option><option value='Bangalore'>Bangalore</option><option value='Delhi'>Delhi</option><option value='Kanpur'>Kanpur</option><option value='Kolkata'>Kolkata</option><option value='Lucknow'>Lucknow</option><option value='Srinagar'>Srinagar</option><option value='Varanasi'>Varanasi</option>")
+                    
+                                }
+                                else if (val == "USA") 
+                                {
+                                  $("#location").html("<option selected disabled value=''>Location</option><option value='Chicago'>Chicago</option><option value='Houston'>Houston</option><option value='Las Vegas'>Las Vegas</option><option value='New York'>New York</option><option value='San Diego'>San Diego</option>");
+                                }  
+                                else if (val == "")
+                                {
+                                  $("#location").html("<option selected disabled value=''>Location</option>");
+                                }
+                              });
+                            });  
+                          </script>
+                          </body> 
+                          </html>
+                          </body> 
+                          </html>         
+                    

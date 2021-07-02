@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeLeaf.org"
+                xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>How to check current weather</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
+    </head>
+    <body>
+        <div class="banner-area">
+          <div class="area">
+            <img src="{{ url_for('static',filename='weather.svg') }}" class="icons">
+            <h4>Weathru </h4>
+            <div class="area2">
+              <li><a href="/about">About</a></li>
+              <li><a href="/news">News</a></li>
+              <li><a href="/contact">Contacts</a></li>
+              <li><a href="/signup">Sign up</a></li>
+              <div sec:authorize="!isAuthenticated()">
+                <button class="btn btn-primary btn-lg" id="loginBtn">Sign up</button>
+                <script type="text/javascript">
+                  $(function () {
+                    $("#loginBtn").click(function () {
+                    window.location.href = '/signup'
+                  })
+                }); 
+                </script>
+            </div> 
+
+            <div sec:authorize="isAuthenticated()">
+              <form action="/signout" method="POST" class="float-right">
+              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+              <button type="submit" class="btn btn-secondary btn-lg">Sign out</button>
+              </form>
+
+            </div>
+       </div>
+</div>
+                <header>
+              
+                <ul class="menu">
+
+                <li><a href="/results">Today</a></li>   
+                    <li><a href="/hourly">Hourly</a></li> 
+                      <li><a href="/daily">Daily</a></li>
+                        <li><a href="/air_quality">Air Quality</a></li>
+                        
+                </ul>
+                     
+                </header> 
+            
+              <div class="form-box">
+                <form id="weatherForm" method="POST" action="{{ url_for('render_results') }}">
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                  <select required id="country" name="country" placeholder="select country" class="search-field location1">
+                    <option select disabled value="">Country</option>
+                    <option value="Australia">Australia</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                  </select>
+                   
+                  <select required id="location" name="location" placeholder="select city"  class="search-field location2">
+                    <option select disabled value="">Location</option>
+                  </select>
+                  <input id="weatherSubmit" type="submit" value="Search" class="search-btn"/>
+                </form>
+               </div>
+
+                    <div class="container">
+                      <div class="glassmorphism">
+                          <div class="weather-box">
+                              <h1>{{result[0][9]}}<sup>o</sup>C</h1>
+                              <h2>Current weather</h2>
+                              <p>Feels like {{result[0][10]}} </p>
+                              <div class="bottom">
+                          <div>
+                            <span>&darr; {{result[0][7]}}<sup>o</sup>C&emsp;&uarr; {{result[0][8]}}<sup>o</sup>C</span>
+                          </div>
+                          </div>
+                          <div class="bottom1">
+                           <div>  Humidity <span>&emsp;{{result[0][5]}}%  </span> </span></div>
+                        </div>
+                       
+                        <div class="bottom2">
+                          <div>  Pressure <span>&emsp;{{result[0][6]}} mb  </span></div>
+                     </div> 
+                     <div class="bottom3">
+                      <div> Wind  <span>&emsp;13 km/h</span></div>
+                 </div> 
+                        <div class="location">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                                <span>{{result[0][0]}}, {{result[0][1]}}</span>
+                              </div>
+                          </div>
+                          <div class="drops">
+                            <div class="drop drop-1"></div>
+                            <div class="drop drop-2"></div>
+                            <div class="drop drop-3"></div>
+                            <div class="drop drop-4"></div>
+                          </div>
+                      </div>
+                      <div class="gallery">
+                      <div class="row">
+                        <div class="column">
+                          <div class="content1">
+                            <img src="{{ url_for('static',filename='second.jpg') }}" alt="Mountains" style="width:100%">
+                            <h3>Srinagar updates</h3>
+                            <p>Srinagar Weather Forecast. Providing a local hourly Srinagar weather forecast of rain, sun, wind, humidity and temperature.
+                                The Long-range 12 day forecast also includes detail for Srinagar weather today. 
+                                
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='hima.jpg') }}" alt="Lights" style="width:100%">
+                            <h3>Meanwhile himalayan reasons are stunning now</h3>
+                    <p>The Northern states like Himachal Pradesh experience a great weather in June and have the most stunning landscapes.
+                    </p> </div>
+                        </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='Thunderincity.jpg') }}" alt="Nature" style="width:100%">
+                            <h3>Maharastra to face thunderelectricity</h3>
+                            <p>The atmospheric conditions are quite conducive for formation of severe thunderstorms in the pre - monsoon season. There are sensitive weather pockets which enhance the ferocity of these storm. Eastern parts comprising of north india, Uttar Pradesh etc are vulnerable to fatal lightning strikes.
+                            </p></div>
+                        </div>
+                        <div class="column">
+                          <div class="content1">
+                          <img src="{{ url_for('static',filename='muss.jpg') }}" alt="Mountains" style="width:100%">
+                            <h3>Best time to visit mussorie</h3>
+                            <p> Apart from the other worldly beauty of a snow-clad Mussoorie, winter is a time of quiet contemplation and long brisk walks. People who visit Mussoorie </p>
+                          </div>
+                        </div>
+          
+                      </div>
+                       <div class="outside">
+                      <div class="content2">
+                        <img src="{{ url_for('static',filename='homepic1.jpg') }}" alt="Bear" style="width:100%">
+                        <h3>Monsoon begins in north india</h3>
+                        <p>Senior Scientist of National Weather Forecasting Unit, IMD, Rajendra Kumar Jenamani shared facts on monsoon’s movement towards Northern states of the country. According to RK Jenamani, “In North India including Punjab, Haryana, Delhi. </p>
+                      </div>
+                      
+                      
+                    </div>
+                    <div class="wrapper">
+                      <div class="panel animated">
+                        <br><br><br><br>
+                        <i class="fa fa-cog fa-15px"></i>
+                        <h3>DESIGN SERVICES</h3>
+                        <p>
+                          lorem epsum.......
+                        </p>
+                        <div class="slide">
+                          <h4>SERVICES</h4>
+                          <ul><li><i class="fa fa-check"></i>project strategy</li>
+                            <li><i class="fa fa-check"></i>content management system</li>
+                              <li><i class="fa fa-check"></i>project strategy</li>
+                              <ul><li><i class="fa fa-check"></i>project strategy</li>
+
+                          </ul>
+                        </div>
+                      </div>
+                       
+            <footer class="footer">
+              <div class="footer-left">
+                <img src="{{ url_for('static',filename='weather.svg') }}" alt="">
+                
+                <div class="socials">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  
+                  <a href="#"><i class="fa fa-youtube"></i></a>
+                  
+                </div>
+              </div>
+              <ul class="footer-right">
+                <li>
+                   <div class="product">
+                  <h2>Product</h2>
+                    
+                  <ul class="box">
+                    <li><a href="#">for business</a></li>
+                    <li><a href="#">for partners</a></li>
+                    <li><a href="#">for advertising</a></li>
+                    <li><a href="#">podcast</a></li>
+                  </ul>
+                  </div>
+                </li>
+              <li class="features">
+                <div class="links">
+                <h2>Useful links</h2>
+                <ul class="box">
+                  <li><a href="#">Openweathermap API</a></li>
+                  <li><a href="#">contact:riyanshasingh074@gmail.com</a></li>
+                  <li><a href="#">singhruby@gmail.com</a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+                </div>
+              </li>
+             <li> 
+               <div class="address">
+              <h2>Address</h2>
+              <ul class="box">
+                <li><a href="#">MMV BHU,lanka Varanasi</a></li>
+                <li><a href="#">CS department</a></li>
+                <li><a href="#">Science block</a></li>
+                <li><a href="#">Varanasi</a></li>
+              </ul>
+              </div>
+                </li>
+
+              </ul>
+
+
+               <div class="footer-bottom">
+
+                <p>All Right reserved by &copy;conceptial2021</p>
+               </div>
+             </footer>
+             <script>
+              $(document).ready(function () {
+                $("#country").change(function () {
+                  var val = $(this).val();
+                    if (val == "Australia") 
+                    {
+                      $("#location").html("<option selected disabled value=''>Location</option><option value='Sydney'>Sydney</option><option value='Brisbane'>Brisbane</option><option value='Perth'>Perth</option>")
+                    }
+                    else if (val == "India") 
+                    {
+                      $("#location").html("<option selected disabled value=''>Location</option><option value='Ahmedabad'>Ahmedabad</option><option value='Bangalore'>Bangalore</option><option value='Delhi'>Delhi</option><option value='Kanpur'>Kanpur</option><option value='Kolkata'>Kolkata</option><option value='Lucknow'>Lucknow</option><option value='Srinagar'>Srinagar</option><option value='Varanasi'>Varanasi</option>")
+        
+                    }
+                    else if (val == "USA") 
+                    {
+                      $("#location").html("<option selected disabled value=''>Location</option><option value='Chicago'>Chicago</option><option value='Houston'>Houston</option><option value='Las Vegas'>Las Vegas</option><option value='New York'>New York</option><option value='San Diego'>San Diego</option>");
+                    }  
+                    else if (val == "")
+                    {
+                      $("#location").html("<option selected disabled value=''>Location</option>");
+                    }
+                  });
+                });  
+              </script>
+              </body> 
+              </html>
+                    
+        
+                      

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About us</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/about.css') }}">
+    </head>
+    <body>
+        <div class="section">
+
+            <div class="container">
+                <div class="area">
+                    <img src="{{ url_for('static',filename='weather.svg') }}" class="icons">
+                    <h4>Weathru </h4>
+                    <div class="area2">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/contact">Contacts</a></li>
+                        <li><a href="/signup">Sign up</a></li>
+                    </div>
+                    <div class="content-section">
+                        <div class="title">
+                            <h1>About Us</h1>
+
+                        </div>
+                        <div class="content1">
+                            <h2>We make hyper-local weather data open for any business</h2>
+                            <p>For each point on the globe,we provide historical<br>current and forecasted weather data via light-speed Api's</br> </p>
+                        </div>
+                        <div class="content2">
+                            <h2>logistics</h2>
+                            <p>Short-range forecasts to set up severe weather alerts<br>for efficient route planning and minimizing risks of loss</br> </p>
+                        </div>
+                        <div class="content3">
+                            <h2>Weathru is a team of two  students of BHU<br>under the observation of department teachers,2021</b></h2>
+                            <p></br> </p>
+                        </div>
+                        <div class="social">
+                            <a href=""><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <img src="{{ url_for('static',filename='bhu.jpg') }}">
+                    </div>
+                </div>
+            </div>    
+        
+        </body>
+    </html>
