@@ -46,13 +46,6 @@ def trigger():
      dag_id = 'weatherdag'
 
      with airflow_client.client.ApiClient(configuration) as api_client:
-          #conf_api_instance = config_api.ConfigApi(api_client) 
-          #try:
-               #api_response = conf_api_instance.get_config()
-               #pprint(api_response)
-
-          #except airflow_client.client.OpenApiException as e:
-               #print("Exception when calling ConfigApi->get_config: %s\n" % e)
 
           dag_run_api_instance = dag_run_api.DAGRunApi(api_client)     
           try:
