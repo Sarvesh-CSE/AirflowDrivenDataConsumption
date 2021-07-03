@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import airflow_client.client
 from airflow_client.client.api import config_api, dag_api, dag_run_api
 from airflow_client.client.model.dag_run import DAGRun
-#from airflow_client.client.api_client import ApiClient, Endpoint as _Endpoint
-#from airflow_client.client.model.config import Config
 from airflow_client.client.model.error import Error
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
