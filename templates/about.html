@@ -16,7 +16,10 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/contact">Contacts</a></li>
-                        <li><a href="/signup">Sign up</a></li>
+                        {% if session[user] %}
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                        <li><a href="/signup">Signup</a></li>
                     </div>
                     <div class="content-section">
                         <div class="title">
