@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeLeaf.org"
-                xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity4">
+
 <head>
     <meta charset="UTF-8">
     <title>How to check current weather</title>
@@ -16,24 +15,12 @@
               <li><a href="/about">About</a></li>
               <li><a href="/news">News</a></li>
               <li><a href="/contact">Contacts</a></li>
-              <li><a href="/signup">Sign up</a></li>
-              <div sec:authorize="!isAuthenticated()">
-                <button class="btn btn-primary btn-lg" id="loginBtn">Sign up</button>
-                <script type="text/javascript">
-                  $(function () {
-                    $("#loginBtn").click(function () {
-                    window.location.href = '/signup'
-                  })
-                }); 
-                </script>
-            </div> 
-
-            <div sec:authorize="isAuthenticated()">
-              <form action="/signout" method="POST" class="float-right">
-              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-              <button type="submit" class="btn btn-secondary btn-lg">Sign out</button>
-              </form>
-
+             
+             {% if session[user] %}
+             <li><a href="/logout">Logout</a></li>
+             {% else %}
+             <li><a href="/signup">Sign up</a></li>
+                
             </div>
        </div>
 </div>
@@ -54,7 +41,7 @@
                 <form id="weatherForm" method="POST" action="{{ url_for('render_results') }}">
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                   <select required id="country" name="country" placeholder="select country" class="search-field location1">
-                    <option select disabled value="">Country</option>
+                    <option value="Country">Country</option>
                     <option value="Australia">Australia</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>
