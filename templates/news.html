@@ -13,10 +13,14 @@
                      <div class="area2">
                             <li><a href="/about">About</a></li>
                              <li><a href="/news">News</a></li>
-                             <li><a href="/contact">Contacts</a></li>
+                             <li><a href="/contact">Contacts</a></li> 
+                             {% if session[user] %}
+                             <li><a href="/logout">Logout</a></li>
+                             {% else %}
                              <li><a href="/signup">Sign up</a></li>
                      </div>
           </div>
+                            
 
     <section class = "main-container-right">
         {% for i in articles %}
